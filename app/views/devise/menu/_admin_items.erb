@@ -1,0 +1,14 @@
+<% if user_signed_in? && current_user.user_type == "admin" %>
+    <li>
+      <%= link_to('View Student Profiles', student_profiles_path) %>
+    </li>
+    <li>
+      <%= link_to('View Company Profiles', company_profiles_path) %>
+    </li>
+    <li>
+      <%= link_to('View Jobs', job_postings_path ) %>
+    </li>
+    <li>
+      <%= link_to('Administration Dashboard', admin_root_path) %>
+    </li>
+<% end %>
