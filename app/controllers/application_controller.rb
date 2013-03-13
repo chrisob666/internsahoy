@@ -94,17 +94,17 @@ class ApplicationController < ActionController::Base
 
   #Redirects the user after successful sign in
   def after_sign_in_path_for(user)
-    @user_type = current_user.user_type
-    @user_id = current_user.id
+    user_type = current_user.user_type
+    user_id = current_user.id.to_s
 
-    if @user_type == "student"
-      "/student_profiles/"+@user_id.to_s()
+    if user_type == "student"
+      student_profile_path(user_id)
 
-    elsif @user_type == "company"
-      "/company_profiles/"+@user_id.to_s()
+    elsif user_type == "company"
+      company_profile_path(user_id)
 
-    elsif @user_type == "admin"
-      "/admin/"
+    elsif user_type == "admin"
+      admin_root
     else
       #do nothing here. There isn't another kind of user but I wanted to be specific for the admin case in
       #case there is some hole I'm not thinking of like a user being able to get access without having a
