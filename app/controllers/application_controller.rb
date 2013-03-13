@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
     unless current_user.user_type == "admin"
       flash[:alert] = "Unauthorized Access!"
       if current_user.user_type == "student"
-        redirect_to student_profile_url
+        redirect_to student_profile_url(current_user.id)
       else
-        redirect_to company_profile_url
+        redirect_to company_profile_url(current_user.id)
       end
     end
    end

@@ -66,11 +66,11 @@ class StuWorkExperiencesController < ApplicationController
 
     respond_to do |format|
       if @stu_work_experience.save
-		format.html { redirect_to student_profile_url(@user), notice:
+		    format.html { redirect_to student_profile_path(@user), notice:
 							'Work Experience was successfully created.' }
 							
         #format.html { redirect_to @stu_work_experience, notice: 'Stu work experience was successfully created.' }
-        format.json { render json: @stu_work_experience, status: :created, location: @stu_work_experience }
+        #format.json { render json: stud@stu_work_experience, status: :created, location: @stu_work_experience }
       else
         format.html { render action: "new" }
         format.json { render json: @stu_work_experience.errors, status: :unprocessable_entity }
@@ -86,7 +86,7 @@ class StuWorkExperiencesController < ApplicationController
 
     respond_to do |format|
       if @stu_work_experience.update_attributes(params[:stu_work_experience])
-        format.html { redirect_to student_profile_url(@user), notice:
+        format.html { redirect_to student_profile_path(@user), notice:
             'Work Experience was successfully updated.' }
 		#format.html { redirect_to @stu_work_experience, notice: 'Stu work experience was successfully updated.' }
         
