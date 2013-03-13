@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-#ruby "1.9.3"
+
 gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
@@ -7,8 +7,11 @@ gem 'rails', '3.2.12'
 
 
 #in order for heroku to work, postgres must be used instead of sqlite3. heroku uses its own database.yml
-#gem 'sqlite3'
-gem 'pg'
+#heroku also needs to be told to use ruby 1.9.3
+#ruby "1.9.3"
+#gem 'pg'
+gem 'sqlite3'
+
 
 
 # Gems used only for assets and not required

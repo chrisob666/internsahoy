@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     id = current_user.id.to_s
 
     #read in file and save ids:grouping into a hash
-    lines = File.read('app/assets/qsort_in.txt').split("\n")
+    lines = File.read('public/qsort_in.txt').split("\n")
 
     h = Hash.new
     lines.each do |line|

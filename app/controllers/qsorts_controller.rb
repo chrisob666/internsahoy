@@ -11,7 +11,7 @@ class QsortsController < ApplicationController
     #@qsorts = Qsort.order('qsorts.position ASC')
     @id = current_user.id.to_s
 
-    @lines = File.read('app/assets/qsort.txt').split("\n")
+    @lines = File.read('public/qsort.txt').split("\n")
 
     @h = Hash.new
     @lines.each do |line|
@@ -36,9 +36,7 @@ class QsortsController < ApplicationController
   end
 
   def sort
-    #f = File.open('app/assets/qsort.txt', 'a')
     @id = current_user.id.to_s
-    #@lst = [@id]
 
     @qsorts = Qsort.all
     @qsorts.each do |qsort|
@@ -46,7 +44,7 @@ class QsortsController < ApplicationController
       qsort.save
     end
 
-    @lines = File.read('app/assets/qsort.txt').split("\n")
+    @lines = File.read('public/qsort.txt').split("\n")
 
     @h = Hash.new
     @lines.each do |line|
@@ -72,7 +70,7 @@ class QsortsController < ApplicationController
     end
 
 #write s to file
-    File.write('app/assets/qsort.txt', s)
+    File.write('public/qsort.txt', s)
 
 =begin
     @items = Qsort.order('qsorts.position ASC')
