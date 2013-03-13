@@ -151,13 +151,13 @@ class StudentProfilesController < ApplicationController
   def create
     @student_profile = StudentProfile.new(params[:student_profile])
     @cur_user = current_user
-    @student_profile.user_id = @cur_user.id.to_s()
+    @student_profile.user_id = @cur_user.id
     @student_profile.id = @cur_user.id
     @student_profile.email = @cur_user.email
 
     respond_to do |format|
       if @student_profile.save
-        format.html { redirect_to student_profile_path(@student_profile), notice: 'Student profile was successfully created.' }
+        format.html { redirect_to student_profile_url(@student_profile), notice: 'Student profile was successfully created.' }
         format.json { render json: @student_profile, status: :created, location: @student_profile }
       else
         format.html { render action: "new" }
@@ -173,7 +173,7 @@ class StudentProfilesController < ApplicationController
 
     respond_to do |format|
       if @student_profile.update_attributes(params[:student_profile])
-        format.html { redirect_to student_profile_path(@student_profile), notice: 'Student profile was successfully updated.' }
+        format.html { redirect_to student_profile_url(@student_profile), notice: 'Student profile was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
