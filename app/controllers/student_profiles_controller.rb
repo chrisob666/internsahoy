@@ -106,6 +106,10 @@ class StudentProfilesController < ApplicationController
       #when the search page is initially visited, display all interns
       #@return = @student_profiles_all
     end
+    @school_text = params[:school_text]
+    @year_text = params[:year_text]
+    @skill_text = params[:skill_text]
+    @culture = params[:culture]
 
   end
   

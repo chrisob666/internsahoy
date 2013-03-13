@@ -150,6 +150,11 @@ class JobPostingsController < InheritedResources::Base
       #when the search page is initially visited, displays all of the job postings
       #@return = @job_postings_all
     end
+    @position_text = params[:position_text]
+    @description_text = params[:description_text]
+    @paid_text = params[:paid_text]
+    @requirements_text = params[:requirements_text]
+    @culture = params[:culture]
   end
 
 

@@ -6,7 +6,7 @@ protected
     user_type = current_user.user_type
 
     if user_type == "student"
-      new_student_profile_path
+      new_student_profile_url
 
     elsif user_type == "company"
       new_company_profile_path
