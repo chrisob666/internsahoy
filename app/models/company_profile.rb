@@ -11,8 +11,8 @@ class CompanyProfile < ActiveRecord::Base
 =begin
 =end
   validates :company_name, :company_type,
-            :format => { :with => /\A[a-zA-Z ]*\z/,
-                         :message => "Numbers and symbols are not allowed." },
+            :format => { :with => /\A[a-zA-Z\'\-\,\!\.\&\(\)\@\#\$\%\" ]*\z/,
+                         :message => "Numbers are not allowed." },
             :length => { :minimum => 1,
                          :message => "This field cannot be empty" }
   validates :location,
