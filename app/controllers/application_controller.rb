@@ -98,13 +98,13 @@ class ApplicationController < ActionController::Base
     user_id = current_user.id.to_s
 
     if user_type == "student"
-      student_profile_path(user_id)
+      student_profile_url(user_id)
 
     elsif user_type == "company"
-      company_profile_path(user_id)
+      company_profile_url(user_id)
 
     elsif user_type == "admin"
-      admin_root
+      admin_root_url
     else
       #do nothing here. There isn't another kind of user but I wanted to be specific for the admin case in
       #case there is some hole I'm not thinking of like a user being able to get access without having a
