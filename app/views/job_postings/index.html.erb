@@ -19,7 +19,7 @@
   <% @job_postings.each do |job_posting| %>
       <tr>
         <% com_prof = CompanyProfile.find(job_posting.company_profile_id) %>
-        <td><%= link_to com_prof.company_name, company_profile_path(com_prof) %></td>
+        <td><%= link_to com_prof.company_name, company_profile_url(com_prof) %></td>
         <td><%= com_prof.qsort %></td>
         <td><%= job_posting.job_id %></td>
         <td><%= job_posting.position %></td>

@@ -76,7 +76,7 @@
             <td><%= job.job_paid %></td>
             <td><%= job.job_requirements%></td>
             <% if @user.id == @company_profile.id %>
-                <td><%= link_to 'Edit', edit_job_posting_path(job) %></td>
+                <td><%= link_to 'Edit', edit_job_posting_url(job) %></td>
                 <td><%= link_to 'Destroy', job, :method=>:delete, :confirm=>'Are you sure?' %></td>
             <% end %>
           </tr>
@@ -89,11 +89,11 @@
 <br/>
 
 <% if @user.id == @company_profile.id %>
-    <%= link_to 'New Job Posting', new_job_posting_path %>
+    <%= link_to 'New Job Posting', new_job_posting_url %>
     <br/>
     <br/>
     <br/>
     <h3>Attitudinal Survey</h3>
     <p>This survey decides your company's culture grouping, which can then be used to narrow down potential employees to those which will be most productive for your office environment.</p>
-    <%= link_to 'Take Attitudinal Survey', qsorts_path %>
+    <%= link_to 'Take Attitudinal Survey', qsorts_url %>
 <% end %>

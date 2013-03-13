@@ -190,7 +190,7 @@ class JobPostingsController < InheritedResources::Base
 
     respond_to do |format|
       if @job_posting.save
-        format.html { redirect_to company_profile_path(@user), notice: 'Job posting was successfully created.' }
+        format.html { redirect_to company_profile_url(@user), notice: 'Job posting was successfully created.' }
         format.json { render json: @job_posting, status: :created, location: @job_posting }
       else
         format.html { render action: "new" }
@@ -206,7 +206,7 @@ class JobPostingsController < InheritedResources::Base
 
     respond_to do |format|
       if @job_posting.update_attributes(params[:job_posting])
-        format.html { redirect_to company_profile_path(@user), notice: 'Job posting was successfully updated.' }
+        format.html { redirect_to company_profile_url(@user), notice: 'Job posting was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -222,7 +222,7 @@ class JobPostingsController < InheritedResources::Base
     @job_posting.destroy
 
     respond_to do |format|
-      format.html { redirect_to company_profile_path(@user), notice: 'Job posting was successfully deleted.'  }
+      format.html { redirect_to company_profile_url(@user), notice: 'Job posting was successfully deleted.'  }
       format.json { head :no_content }
     end
   end

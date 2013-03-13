@@ -66,7 +66,7 @@ class StuWorkExperiencesController < ApplicationController
 
     respond_to do |format|
       if @stu_work_experience.save
-		format.html { redirect_to student_profile_path(@user), notice:
+		format.html { redirect_to student_profile_url(@user), notice:
 							'Work Experience was successfully created.' }
 							
         #format.html { redirect_to @stu_work_experience, notice: 'Stu work experience was successfully created.' }
@@ -86,7 +86,7 @@ class StuWorkExperiencesController < ApplicationController
 
     respond_to do |format|
       if @stu_work_experience.update_attributes(params[:stu_work_experience])
-        format.html { redirect_to student_profile_path(@user), notice:
+        format.html { redirect_to student_profile_url(@user), notice:
             'Work Experience was successfully updated.' }
 		#format.html { redirect_to @stu_work_experience, notice: 'Stu work experience was successfully updated.' }
         
@@ -106,7 +106,7 @@ class StuWorkExperiencesController < ApplicationController
     @stu_work_experience.destroy
 
     respond_to do |format|
-      format.html {redirect_to student_profile_path(@user), notice:
+      format.html {redirect_to student_profile_url(@user), notice:
           'Work Experience was successfully deleted.'  }
 	  #format.html { redirect_to stu_work_experiences_url }
       format.json { head :no_content }

@@ -66,7 +66,7 @@ class StuReferencesController < ApplicationController
 
     respond_to do |format|
       if @stu_reference.save
-        format.html { redirect_to student_profile_path(@user),
+        format.html { redirect_to student_profile_url(@user),
 			notice: 'Reference was successfully created.' }
         format.json { render json: @stu_reference, status: :created, location: @stu_reference }
       else
@@ -83,7 +83,7 @@ class StuReferencesController < ApplicationController
 
     respond_to do |format|
       if @stu_reference.update_attributes(params[:stu_reference])
-        format.html { redirect_to student_profile_path(@user),
+        format.html { redirect_to student_profile_url(@user),
 			notice: 'Reference was successfully updated.' }
         format.json { head :no_content }
       else
@@ -100,7 +100,7 @@ class StuReferencesController < ApplicationController
     @stu_reference.destroy
 
     respond_to do |format|
-      format.html { redirect_to student_profile_path(@user),
+      format.html { redirect_to student_profile_url(@user),
                                 notice: 'Reference was successfully destroyed.' }
       format.json { head :no_content }
     end

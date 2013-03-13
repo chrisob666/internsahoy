@@ -10,7 +10,7 @@
 <% @saved_student_profiles.each do |saved_student_profile| %>
   <tr>
     <td><%= link_to 'Show', saved_student_profile %></td>
-    <td><%= link_to 'Edit', edit_saved_student_profile_path(saved_student_profile) %></td>
+    <td><%= link_to 'Edit', edit_saved_student_profile_url(saved_student_profile) %></td>
     <td><%= link_to 'Destroy', saved_student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
@@ -18,4 +18,4 @@
 
 <br />
 
-<%= link_to 'New Saved student profile', new_saved_student_profile_path %>
+<%= link_to 'New Saved student profile', new_saved_student_profile_url %>

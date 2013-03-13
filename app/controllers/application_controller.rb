@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
     unless current_user.user_type == "admin"
       flash[:alert] = "Unauthorized Access!"
       if current_user.user_type == "student"
-        redirect_to root_path
+        redirect_to student_profile_url
       else
-        redirect_to company_profile_path
+        redirect_to company_profile_url
       end
     end
    end
@@ -53,12 +53,12 @@ class ApplicationController < ActionController::Base
     if get_profile_type == "student"
       cur_profile = StudentProfile.find(current_user.id)
       if param_id.to_i != cur_profile.id
-        redirect_to student_profile_path(cur_profile), notice: 'You are not authorized to access that page!'
+        redirect_to student_profile_url(cur_profile), notice: 'You are not authorized to access that page!'
       end
     elsif get_profile_type == "company"
       cur_profile = CompanyProfile.find(current_user.id)
       if param_id.to_i != cur_profile.id
-        redirect_to company_profile_path(cur_profile), notice: 'You are not authorized to access that page!'
+        redirect_to company_profile_url(cur_profile), notice: 'You are not authorized to access that page!'
       end
     end
   end
@@ -72,11 +72,11 @@ class ApplicationController < ActionController::Base
   def profile_redir
     if get_profile_type == "student"
       if !StudentProfile.exists?(current_user.id)
-        redirect_to new_student_profile_path, notice: 'You are not authorized to access that page yet!'
+        redirect_to new_student_profile_url, notice: 'You are not authorized to access that page yet!'
       end
     elsif get_profile_type == "company"
       if !CompanyProfile.exists?(current_user.id)
-        redirect_to new_company_profile_path, notice: 'You are not authorized to access that page yet!'
+        redirect_to new_company_profile_url, notice: 'You are not authorized to access that page yet!'
       end
     end
   end
@@ -117,7 +117,7 @@ class ApplicationController < ActionController::Base
       @company_profile = CompanyProfile.find(get_user.id)
 
       if(@company_profile.verified != true)
-        redirect_to company_profile_path(@company_profile), notice: "Your profile needs to be approved before you can do that!"
+        redirect_to company_profile_url(@company_profile), notice: "Your profile needs to be approved before you can do that!"
       end
     end
   end

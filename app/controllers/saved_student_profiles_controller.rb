@@ -31,7 +31,7 @@ class SavedStudentProfilesController < ApplicationController
 
     respond_to do |format|
       if @saved_student_profile.update_attributes(params[:saved_student_profile])
-        format.html { redirect_to search_student_profiles_path, notice: 'Saved search was successfully updated.' }
+        format.html { redirect_to search_student_profiles_url, notice: 'Saved search was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -47,7 +47,7 @@ class SavedStudentProfilesController < ApplicationController
     @saved_student_profile.destroy
 
     respond_to do |format|
-      format.html { redirect_to search_student_profiles_path, :notice => 'Saved search was successfully destroyed'}
+      format.html { redirect_to search_student_profiles_url, :notice => 'Saved search was successfully destroyed'}
       format.json { head :no_content }
     end
   end

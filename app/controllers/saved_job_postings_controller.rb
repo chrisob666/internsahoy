@@ -32,7 +32,7 @@ class SavedJobPostingsController < ApplicationController
 
     respond_to do |format|
       if @saved_job_posting.update_attributes(params[:saved_job_posting])
-        format.html { redirect_to saved_job_postings_path, notice: 'Saved search was successfully updated.' }
+        format.html { redirect_to saved_job_postings_url, notice: 'Saved search was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -48,7 +48,7 @@ class SavedJobPostingsController < ApplicationController
     @saved_job_posting.destroy
 
     respond_to do |format|
-      format.html { redirect_to search_job_postings_path, :notice => 'Saved search was successfully destroyed' }
+      format.html { redirect_to search_job_postings_url, :notice => 'Saved search was successfully destroyed' }
       format.json { head :no_content }
     end
   end

@@ -81,7 +81,7 @@
             <td><%= work_history.end_date %></td>
             <td><%= work_history.description %></td>
             <% if @user.id == @student_profile.id %>
-                <td><%= link_to 'Edit', edit_stu_work_experience_path(work_history) %></td>
+                <td><%= link_to 'Edit', edit_stu_work_experience_url(work_history) %></td>
                 <td><%= link_to 'Destroy',  work_history, :method => :delete, :confirm => 'Are you sure?' %></td>
             <% end %>
           </tr>
@@ -92,7 +92,7 @@
 <% end %>
 
 <% if @user.id == @student_profile.id %>
-    <%= link_to 'Add Work Experience', new_stu_work_experience_path %>
+    <%= link_to 'Add Work Experience', new_stu_work_experience_url %>
 <% end %>
 
 <br/>
@@ -116,7 +116,7 @@
           <tr>
             <td><%= skill.description %></td>
             <% if @user.id == @student_profile.id %>
-                <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
+                <td><%= link_to 'Edit', edit_skill_url(skill) %></td>
                 <td><%= link_to 'Destroy', skill, :method=>:delete, :confirm=>'Are you sure?' %></td>
             <% end %>
           </tr>
@@ -127,7 +127,7 @@
 <% end %>
 
 <% if @user.id == @student_profile.id %>
-    <%= link_to 'Add A Skill', new_skill_path %>
+    <%= link_to 'Add A Skill', new_skill_url %>
 <% end %>
 
 <br/>
@@ -157,7 +157,7 @@
 			<td><%= reference.phone %></td>
             <td><%= mail_to reference.email %></td>
             <% if @user.id == @student_profile.id %>
-                <td><%= link_to 'Edit', edit_stu_reference_path(reference) %></td>
+                <td><%= link_to 'Edit', edit_stu_reference_url(reference) %></td>
                 <td><%= link_to 'Destroy', reference, :method=>:delete, :confirm=>'Are you sure?' %></td>
             <% end %>
           </tr>
@@ -169,11 +169,11 @@
 <br />
 
 <% if @user.id == @student_profile.id %>
-    <%= link_to 'Add A Reference', new_stu_reference_path %>
+    <%= link_to 'Add A Reference', new_stu_reference_url %>
     <br/>
     <br/>
     <br/>
     <h3>Attitudinal Survey</h3>
     <p>The attitudinal survey is used to decide your culture grouping, which you can use to decide which companies you will fit in best.</p>
-    <%= link_to 'Take Attitudinal Survey', qsorts_path %>
+    <%= link_to 'Take Attitudinal Survey', qsorts_url %>
 <% end %>
