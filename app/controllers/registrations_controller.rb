@@ -3,16 +3,16 @@ protected
 
   # Redirects the user to the appropriate page after registering
   def after_sign_up_path_for(user)
-    @user_type = current_user.user_type
+    user_type = current_user.user_type
 
-    if @user_type == "student"
-      "/student_profiles/new"
+    if user_type == "student"
+      new_student_profile_url
 
-    elsif @user_type == "company"
-      "/company_profiles/new"
+    elsif user_type == "company"
+      new_company_profile_url
 
-    elsif @user_type == "admin"
-      root_path
+    elsif user_type == "admin"
+      admin_root_url
     else
     end
   end
