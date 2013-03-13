@@ -9,7 +9,7 @@ Intern::Application.routes.draw do
 
   #Devise routes
   devise_for :users, :controllers => {:registrations => "registrations"}
-  devise_for :users, :controllers => {:users => "users"}
+  #devise_for :users, :controllers => {:users => "users"}
 
   #Website root page
   root :to => "student_profiles#index"
@@ -17,7 +17,7 @@ Intern::Application.routes.draw do
   #Resources
   resources :skills
   resources :stu_references
-  resources :users
+  #resources :users
   resources :job_postings do
     collection do
       get 'search'
