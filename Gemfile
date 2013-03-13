@@ -8,9 +8,9 @@ gem 'rails', '3.2.12'
 
 #in order for heroku to work, postgres must be used instead of sqlite3. heroku uses its own database.yml
 #heroku also needs to be told to use ruby 1.9.3
-#ruby "1.9.3"
-#gem 'pg'
-gem 'sqlite3'
+ruby "1.9.3"
+gem 'pg'
+#gem 'sqlite3'
 
 
 
