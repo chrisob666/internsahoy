@@ -60,7 +60,7 @@ class StuWorkExperiencesController < ApplicationController
   # POST /stu_work_experiences.json
   def create
     @stu_work_experience = StuWorkExperience.new(params[:stu_work_experience])
-    @user = current_user
+    #@user = current_user
     @stu_work_experience.student_profile_id = @user.id
 
 
