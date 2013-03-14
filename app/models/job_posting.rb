@@ -14,7 +14,7 @@ class JobPosting < ActiveRecord::Base
       errors.add(:job_end, "must be greater than Start Date.") if job_end < job_start
   end
 
-  validates :position_time, :job_paid, :job_id, :position,
+  validates :position_time, :job_paid, :position,
             :length => { :minimum => 1,
                          :message => "This field cannot be empty" }
   validates :job_description, :job_requirements,
