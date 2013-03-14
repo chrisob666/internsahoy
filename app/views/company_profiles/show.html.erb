@@ -49,7 +49,7 @@
 <% if !@company_profile.job_postings.empty? %>
     <table>
       <tr>
-        <th>Job ID</th>
+
         <th>Position</th>
         <th>Description</th>
         <th>Start Date</th>
@@ -66,7 +66,7 @@
 
       <% @jobs.each do |job| %>
           <tr>
-            <td><%= job.job_id %></td>
+
             <td><%= job.position %></td>
             <td><%= job.job_description %></td>
             <td><%= job.job_start %></td>
