@@ -99,6 +99,9 @@
 <br/>
 <br/>
 
+<div style="overflow: auto">
+
+  <div style="display:inline-block; float:left; width:20%;">
 <h3>Skills</h3>
 
 <% if !@student_profile.skills.empty? %>
@@ -126,14 +129,13 @@
     <p>No skills have been added yet!</p>
 <% end %>
 
+<br/>
 <% if @user.id == @student_profile.id %>
     <%= link_to 'Add A Skill', new_skill_url %>
 <% end %>
+  </div>
 
-<br/>
-<br/>
-<br/>
-
+  <div style="display:inline-block; width:75%; margin-left:25px;">
 <h3>References</h3>
 
 <% if !@student_profile.stu_references.empty? %>
@@ -167,9 +169,13 @@
     <p>No references have been added yet!</p>
 <% end %>
 <br />
-
 <% if @user.id == @student_profile.id %>
-    <%= link_to 'Add A Reference', new_stu_reference_url %>
+        <%= link_to 'Add A Reference', new_stu_reference_url %>
+<% end %>
+</div>
+  </div>
+<% if @user.id == @student_profile.id %>
+
     <br/>
     <br/>
     <br/>

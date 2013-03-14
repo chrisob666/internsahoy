@@ -6,6 +6,7 @@ class StudentProfilesController < ApplicationController
   before_filter(:except => [:new, :create]) {|c| c.profile_redir}
   #keep user from accessing any method that isn't connected to their profile
   before_filter(:only =>[:edit, :new, :destroy, :create, :update]) {|c| c.deny_access(params[:id])}
+  before_filter(:only=>[:index]) {|c| if c.get_profile_type == 'student'; c.deny_access(-1) end}
   #redirect company if they haven't been verified
   before_filter :verified?
 
