@@ -21,7 +21,8 @@
   <% if !@student_profile.resume.nil? && @student_profile.resume.to_s != "" %>
   <tr>
     <th class="side">Resume:</th>
-    <td><%= link_to 'View', @student_profile.resume.to_s  %></td>
+    <td><%# link_to 'View', @student_profile.resume.to_s  %></td>
+    <td><%= link_to 'View', url_for(@student_profile.resume.to_s)  %></td>
   </tr>
   <% end %>
   <tr>
